@@ -83,6 +83,7 @@ module VagrantPlugins
       attr_accessor :machine_arch
       attr_accessor :machine_virtual_size
       attr_accessor :disk_bus
+      attr_accessor :disk_controller_model
       attr_accessor :disk_device
       attr_accessor :nic_model_type
       attr_accessor :nested
@@ -203,6 +204,7 @@ module VagrantPlugins
         @machine_arch      = UNSET_VALUE
         @machine_virtual_size = UNSET_VALUE
         @disk_bus          = UNSET_VALUE
+        @disk_controller_model = UNSET_VALUE
         @disk_device       = UNSET_VALUE
         @nic_model_type    = UNSET_VALUE
         @nested            = UNSET_VALUE
@@ -681,6 +683,7 @@ module VagrantPlugins
         @machine_arch = nil if @machine_arch == UNSET_VALUE
         @machine_virtual_size = nil if @machine_virtual_size == UNSET_VALUE
         @disk_bus = 'virtio' if @disk_bus == UNSET_VALUE
+        @disk_controller_model = 'auto' if @disk_controller_model == UNSET_VALUE
         @disk_device = 'vda' if @disk_device == UNSET_VALUE
         @nic_model_type = nil if @nic_model_type == UNSET_VALUE
         @nested = false if @nested == UNSET_VALUE
